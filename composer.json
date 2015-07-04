@@ -1,0 +1,24 @@
+{
+    "name": "tvswe/error",
+    "type": "library",
+    "description": "Error trait",
+    "keywords": [
+        "error"
+    ],
+    "homepage": "http://tvswe.eu/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tino Vogel",
+            "email": "tv.swe@gmx.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "classmap": [
+            "/"
+        ]
+    }
+}
