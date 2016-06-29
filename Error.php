@@ -2,7 +2,8 @@
 
 namespace Tvswe\Error;
 
-trait Error {
+trait Error
+{
     /**
      * Errors
      * @var string[]
@@ -22,6 +23,15 @@ trait Error {
             $this->errors[] = $error;
         }
     }
+    
+    /**
+     * Adds an error by an exception
+     * @param \Exception
+     */
+    protected function addErrorByException(\Exception $e)
+    {
+        $this->addError($e->getMessage(), $e->getCode());
+    }
 
     /**
      * Adds errors
@@ -29,7 +39,9 @@ trait Error {
      */
     protected function addErrors(array $errors)
     {
-        $this->errors += $errors;
+        foreach($errors as $key => $error) {
+            $this->addError($error, $key);
+        }
     }
     
     /**
@@ -38,7 +50,7 @@ trait Error {
      */
     protected function hasErrors()
     {
-        return (bool) count($this->errors);
+        return (bool) $this->errors;
     }
     
     /**
