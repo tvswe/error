@@ -17,7 +17,7 @@ trait Error
      */
     protected function addError($error, $key = null)
     {
-        if($key) {
+        if ($key) {
             $this->errors[$key] = $error;
         } else {
             $this->errors[] = $error;
@@ -39,7 +39,7 @@ trait Error
      */
     protected function addErrors(array $errors)
     {
-        foreach($errors as $key => $error) {
+        foreach ($errors as $key => $error) {
             $this->addError($error, $key);
         }
     }
